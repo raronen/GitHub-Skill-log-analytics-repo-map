@@ -1,0 +1,6 @@
+.cache/
+catalog.json
+*.catalog.json
+*.tmp
+*.log
+TestResults/

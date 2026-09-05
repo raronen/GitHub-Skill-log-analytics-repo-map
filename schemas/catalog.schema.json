@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/log-analytics-repo-map/catalog.schema.json",
+  "title": "Log Analytics repository catalog",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "generatedAtUtc",
+    "rootPath",
+    "repositoryCount",
+    "repositories",
+    "relationships"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "generatedAtUtc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "rootPath": {
+      "type": "string"
+    },
+    "repositoryCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "repositories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "path",
+          "sourceCommit",
+          "role",
+          "technologies",
+          "keywords",
+          "manifests"
+        ]
+      }
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source",
+          "target",
+          "type",
+          "referenceCount",
+          "evidence"
+        ]
+      }
+    }
+  }
+}
